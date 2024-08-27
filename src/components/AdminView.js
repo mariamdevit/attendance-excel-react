@@ -1,5 +1,4 @@
 import React from 'react';
-import { GoogleLogout } from 'react-google-login';
 
 
 const AdminView = ({ user, onLogout, setView }) => {
@@ -28,11 +27,7 @@ const AdminView = ({ user, onLogout, setView }) => {
         <button onClick={handleManagePrograms} className="bg-secondary">إدارة البرامج</button>
         <button onClick={handleViewUsers} className="bg-tertiary">عرض بيانات المستخدمين</button>
       </div>
-      <GoogleLogout
-        clientId={process.env.REACT_APP_CLIENT_ID}
-        buttonText="تسجيل الخروج"
-        onLogoutSuccess={onLogout}
-      />
+     
     </div>
   );
 };
