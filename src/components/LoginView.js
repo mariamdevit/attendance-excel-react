@@ -12,7 +12,7 @@ const LoginView = ({setView}) => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [userType, setUserType] = useState(null);
-
+console.log('userType', userType)
   const handleLogin = (e) => {
     e.preventDefault();
 

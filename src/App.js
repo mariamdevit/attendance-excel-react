@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { gapi } from 'gapi-script';
 import AdminView from './components/AdminView';
 import UserView from './components/UserView';
@@ -8,7 +8,6 @@ import AttendanceLog from './components/AttendanceLog'
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const API_KEY = process.env.REACT_APP_API_KEY;
-const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
 
 function App() {
 
@@ -32,14 +31,8 @@ function App() {
     gapi.load('client:auth2', start);
   }, []);
 
-  const handleLoginSuccess = (response) => {
-    setUser(response.profileObj);
-    setView(response.profileObj.email.endsWith('@admin.com') ? 'admin' : 'user');
-  };
+ 
 
-  const handleLoginFailure = (response) => {
-    console.log('Login failed', response);
-  };
 
   const handleLogout = () => {
     setUser(null);

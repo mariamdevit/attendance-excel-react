@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 
 const UserView = ({ user, onLogout }) => {
-  const [attendanceData, setAttendanceData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    degree: '',
-    program: '',
-  });
 
-  const handleChange = (e) => {
-    setAttendanceData({ ...attendanceData, [e.target.id]: e.target.value });
-  };
+
 
   const handleAttendanceSubmit = () => {
     // Submit the attendance data to Google Sheets
